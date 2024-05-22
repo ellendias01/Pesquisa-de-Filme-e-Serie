@@ -2,7 +2,7 @@
 
 Bem-vindo ao site Filmes e Séries! Este projeto é uma aplicação web desenvolvida com Vue.js que permite buscar e visualizar informações sobre filmes e séries, utilizando a API do OMDB (Open Movie Database).
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img src="/Filme/gif2.gif" width="2600"  height="10" >
 
 # 🖥️ Funcionalidades
 
@@ -12,7 +12,7 @@ Bem-vindo ao site Filmes e Séries! Este projeto é uma aplicação web desenvol
  * Interface Responsiva: Design amigável e responsivo para diferentes dispositivos.
  * Feedback Visual: Mensagem de erro personalizada e animação em caso de resultados não encontrados.
    
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img src="/Filme/gif2.gif" width="2600"  height="10" >
 
 # ⚙️ Tecnologias Utilizadas 
 
@@ -21,7 +21,7 @@ Bem-vindo ao site Filmes e Séries! Este projeto é uma aplicação web desenvol
  - HTML/CSS: Estrutura e estilo da aplicação.
  - Netlify: Hospedagem da aplicação.
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img src="/Filme/gif2.gif" width="2600"  height="10" >
 
 # 🎴Interface
 
@@ -47,7 +47,7 @@ Video do Site
 https://github.com/ellendias01/Pesquisa-de-Filme-e-Serie/assets/145167118/2a22671f-6796-439e-bbbd-731508b2d633
 
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img src="/Filme/gif2.gif" width="2600"  height="10" >
 
 ### 🧑‍💻 Como Utilizar o Site [Filmes e Séries](https://filmes-e-series.netlify.app/)
 
@@ -84,9 +84,9 @@ O site **Filmes e Séries** permite que você busque e visualize informações d
 5. **Mensagens de Erro:**
    - Caso nenhum resultado seja encontrado, uma mensagem será exibida informando que "Filme ou Gênero não encontrado. Por favor, digite novamente!".
 
-
 Visite o site **[Filmes e Séries](https://filmes-e-series.netlify.app/)** e explore uma vasta coleção de informações sobre seus filmes e séries favoritos de maneira rápida e fácil!
 
 
 Aproveite e faça suas buscas no **[Filmes e Séries](https://filmes-e-series.netlify.app/)** agora mesmo!
 
+<img src="/Filme/gif2.gif" width="250" height="40" ><img src="/Filme/gif2.gif" width="250" height="40" ><img src="/Filme/gif2.gif" width="250" height="40" >
