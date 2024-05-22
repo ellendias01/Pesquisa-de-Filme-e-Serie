@@ -1,0 +1,512 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ddd;
+    background: radial-gradient(#252525, #181818, #212121);
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    user-select: none;
+    padding: 20px;
+}
+
+#app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+button,
+input {
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+input {
+    color: white;
+    border: 2px solid #8707ff;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    max-width: 190px;
+}
+
+input:active {
+    box-shadow: 2px 2px 15px #8707ff inset;
+}
+
+button {
+    --hover-shadows: 16px 16px 33px #121212, -16px -16px 33px #303030;
+    --accent: fuchsia;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: #212121;
+    cursor: pointer;
+    color: white;
+    padding: 1em 2em;
+    transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s,
+        letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+}
+
+button:active {
+    background-color: var(--accent);
+    transform: scale(0.95);
+}
+
+.container {
+    width: 320px;
+    background: linear-gradient(45deg, #111, #252525, #111, #252525);
+    border-radius: 15px;
+    padding: 10px 20px 30px;
+    position: relative;
+    box-shadow: 0 0 2px #e97101;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.container:hover {
+    background: rgb(61, 106, 255);
+    box-shadow: 0 0 30px 5px rgba(146, 206, 245, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.container:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+}
+
+.container::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+.container:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+}
+
+.container.animation:hover {
+    background-color: #d88f3beb;
+}
+
+.container.action:hover {
+    background-color: #ce122f;
+}
+
+.container.comedy:hover {
+    background-color: #fafa00d8;
+    color: #000000;
+}
+
+.container.drama:hover {
+    background-color: #12b5aa;
+}
+
+.container.horror:hover {
+    background-color: #963b0a;
+}
+
+.container.romance:hover {
+    background-color: #ff69b4
+}
+
+.container.scifi:hover {
+    background-color: #6a22a6;
+}
+
+.container.adventure:hover {
+    background-color: #37a618;
+}
+
+.container.fantasy:hover {
+    background-color: #dda0dd;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+    background-color: tomato;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 0 10px 3px #e97101;
+    background-size: contain;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating .last {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    color: #bebebe;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.details p {
+    margin: 5px 0;
+}
+
+.last svg {
+    cursor: pointer;
+    fill: #ffc107;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+li {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: #555555;
+    color: whitesmoke;
+}
+
+.radio-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    padding: 0.25rem;
+    width: 300px;
+}
+
+.radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.radio-inputs .radio input {
+    display: none;
+}
+
+.radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: rgba(51, 65, 85, 1);
+    transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked+.name {
+    background-color: #8707ff;
+    color: #f7eef5;
+    font-weight: 600;
+}
+
+.loader {
+    display: inline-block;
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+.loader {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 32px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: loader 1.2s infinite;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    50% {
+        transform: rotate(900deg);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    100% {
+        transform: rotate(1800deg);
+    }
+}
+
+.no {
+    margin: 140px;
+}
+
+.no p {
+    text-align: center;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.modelViewPort {
+    perspective: 1000px;
+    width: 20rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.eva {
+    --EVA-ROTATION-DURATION: 4s;
+    transform-style: preserve-3d;
+    animation: rotateRight var(--EVA-ROTATION-DURATION) linear infinite alternate;
+}
+
+.head {
+    position: relative;
+    width: 6rem;
+    height: 4rem;
+    border-radius: 48% 53% 45% 55% / 79% 79% 20% 22%;
+    background: linear-gradient(to right, white 45%, gray);
+}
+
+.eyeChamber {
+    width: 4.5rem;
+    height: 2.75rem;
+    position: relative;
+    left: 50%;
+    top: 55%;
+    border-radius: 45% 53% 45% 48% / 62% 59% 35% 34%;
+    background-color: #0c203c;
+    box-shadow: 0px 0px 2px 2px white, inset 0px 0px 0px 2px black;
+    transform: translate(-50%, -50%);
+    animation: moveRight var(--EVA-ROTATION-DURATION) linear infinite alternate;
+}
+
+.eye {
+    width: 1.2rem;
+    height: 1.5rem;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.eye:first-child {
+    left: 12px;
+    top: 50%;
+    background: repeating-linear-gradient(65deg,#9bdaeb 0px,#9bdaeb 1px, white 2px);
+    box-shadow: inset 0px 0px 5px #04b8d5, 0px 0px 15px 1px #0bdaeb;
+    transform: translate(0, -50%) rotate(-65deg);
+}
+
+.eye:nth-child(2) {
+    right: 12px;
+    top: 50%;
+    background: repeating-linear-gradient(-65deg,#9bdaeb 0px,#9bdaeb 1px,white 2px);
+    box-shadow: inset 0px 0px 5px #04b8d5, 0px 0px 15px 1px #0bdaeb;
+    transform: translate(0, -50%) rotate(65deg);
+}
+
+.body {
+    width: 6rem;
+    height: 8rem;
+    position: relative;
+    margin-block-start: 0.25rem;
+    border-radius: 47% 53% 45% 55% / 12% 9% 90% 88%;
+    background: linear-gradient(to right, white 35%, gray);
+}
+
+.hand {
+    position: absolute;
+    left: -1.5rem;
+    top: 0.75rem;
+    width: 2rem;
+    height: 5.5rem;
+    border-radius: 40%;
+    background: linear-gradient(to left, white 15%, gray);
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.25);
+    transform: rotateY(55deg) rotateZ(10deg);
+}
+
+.hand:first-child {
+    animation: compensateRotation var(--EVA-ROTATION-DURATION) linear infinite alternate;
+}
+
+.hand:nth-child(2) {
+    left: 92%;
+    background: linear-gradient(to right, white 15%, gray);
+    transform: rotateY(55deg) rotateZ(-10deg);
+    animation: compensateRotationRight var(--EVA-ROTATION-DURATION) linear infinite alternate;
+}
+
+.scannerThing {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 60%;
+    top: 10%;
+    border-top: 180px solid #9bdaeb;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    transform-origin: top left;
+    mask: linear-gradient(to right, white, transparent 35%);
+    animation: glow 2s cubic-bezier(0.86, 0, 0.07, 1) infinite;
+}
+
+.scannerOrigin {
+    position: absolute;
+    width: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    left: 60%;
+    top: 10%;
+    background: #9bdaeb;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+    animation: moveRight var(--EVA-ROTATION-DURATION) linear infinite;
+}
+
+@keyframes rotateRight {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(25deg);
+    }
+}
+
+@keyframes moveRight {
+    from {
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        transform: translate(-40%, -50%);
+    }
+}
+
+@keyframes compensateRotation {
+    from {
+        transform: rotateY(55deg) rotateZ(10deg);
+    }
+
+    to {
+        transform: rotatey(30deg) rotateZ(10deg);
+    }
+}
+
+@keyframes compensateRotationRight {
+    from {
+        transform: rotateY(55deg) rotateZ(-10deg);
+    }
+
+    to {
+        transform: rotateY(70deg) rotateZ(-10deg);
+    }
+}
+
+@keyframes glow {
+    from {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    45% {
+        transform: rotate(-25deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
